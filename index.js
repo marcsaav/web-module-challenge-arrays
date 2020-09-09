@@ -170,11 +170,13 @@ and should return the average number of words per item in the array.
 For example, getAverageWordLength(originalFlavors) should return a number between 0 and 3. */
 
 function getAverageWordLength(arr){
-    /* Creat an empty array
-    Iterate through old array
-    foreach split into words
-    count words
-    add up all words divide by arr.length */
+        let bufferArr = []
+        for (let i = 0; i < arr.length; i++) {
+        newArr = arr[i].split(" ");
+        bufferArr = [...bufferArr, ...newArr];
+      }
+        console.log(bufferArr.length/arr.length)
+      }
 
 
 
@@ -264,9 +266,7 @@ function getRandomFlavors(arr1,arr2,arr3,arr4){
     let allFlavors = [...arr1,...arr2,...arr3,...arr4]
 
     let randomFlavors = [], start;
-/* Combine All Arrays
-Generate 31 Random Numbers
-Use numbers to add into a new array the indexes of allFlavors */
+
     for (let i = allFlavors.length; i >= 72 && i > 0; i--) {
         start = Math.floor(Math.random() * allFlavors.length);
         randomFlavors.push(allFlavors.splice(start, 1)[0]);
