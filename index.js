@@ -62,7 +62,6 @@ function addFlavor(flavor, arr) {
     console.log(arr);
 }
 
-addFlavor("Rainbow Sherbert", originalFlavors)
 
 
 /* Task 3: Houston, we have a problem! There are now 32 flavors in the array! Your task is to remove an item from the end of the array.
@@ -170,11 +169,13 @@ and should return the average number of words per item in the array.
 
 For example, getAverageWordLength(originalFlavors) should return a number between 0 and 3. */
 
-function getAverageWordLength(/*code here*/){
+function getAverageWordLength(arr){
+    /* Creat an empty array
+    Iterate through old array
+    foreach split into words
+    count words
+    add up all words divide by arr.length */
 
-    /*code here*/
-
-}
 
 
 /* STRETCH 2: Baskin Robins now offers new flavors, seasonal flavors, and even regional flavors. Write a function that will randomly select a total of 31 flavors from originalFlavors, currentFlavors, seasonalFlavors, and regionalFlavors.
@@ -258,8 +259,20 @@ var regionalFlavors = ["Pink Bubblegum",
     "Chocolate Chocolate Chip Cheesecake",
     "Caramel 'n' Cookies"]
 
-function getRandomFlavors(/*code here*/){
+function getRandomFlavors(arr1,arr2,arr3,arr4){
 
-    /*code here*/
+    let allFlavors = [...arr1,...arr2,...arr3,...arr4]
+
+    let randomFlavors = [], start;
+/* Combine All Arrays
+Generate 31 Random Numbers
+Use numbers to add into a new array the indexes of allFlavors */
+    for (let i = allFlavors.length; i >= 72 && i > 0; i--) {
+        start = Math.floor(Math.random() * allFlavors.length);
+        randomFlavors.push(allFlavors.splice(start, 1)[0]);
+     };
+     console.log(randomFlavors);
 
 }
+
+getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors)
