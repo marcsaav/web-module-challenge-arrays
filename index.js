@@ -120,7 +120,7 @@ Your function should accept:
 
 and should return a new array that is identical to the old array. You can name the new array however you'd like. */
 
-let newFlavors = []
+let flavors = []
 
 function copy(arr, arr2){
     arr2 = arr.slice();
@@ -143,11 +143,16 @@ DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem.
 
 hint - you can use the .includes method to help you solve this */
 
-function filterByWord(/*code here*/){
+function filterByWord(arr, string){
+    let newArr = [];
 
-    /*code here*/
-
-}
+    for(let i = 0; i < arr.length; i++ ) {
+        if(arr[i].includes(string)) {
+          newArr.push(arr[i]);
+          console.log(newArr);
+        }
+      }
+    }
 
 
 
